@@ -87,7 +87,9 @@ public class Restroom implements Parcelable {
     public double getAverageCleanliness() {
         double average = 0;
         for(Review rev : reviews){
-            average += rev.getCleanliness();
+            double cur = rev.getCleanliness();
+            if(cur != 0) // not reviewed
+                average += cur;
         }
         return average / reviews.size();
     }
@@ -95,7 +97,9 @@ public class Restroom implements Parcelable {
     public double getAverageModernity() {
         double average = 0;
         for(Review rev : reviews){
-            average += rev.getModernity();
+            double cur = rev.getModernity();
+            if(cur != 0)
+                average += cur;
         }
         return average / reviews.size();
     }
@@ -103,7 +107,9 @@ public class Restroom implements Parcelable {
     public double getAverageTP() {
         double average = 0;
         for(Review rev : reviews){
-            average += rev.getTpAbundance();
+            double cur = rev.getTpAbundance();
+            if(cur != 0)
+                average += cur;
         }
         return average / reviews.size();
     }
@@ -111,7 +117,9 @@ public class Restroom implements Parcelable {
     public double getAverageOdor() {
         double average = 0;
         for(Review rev : reviews){
-            average += rev.getOdor();
+            double cur = rev.getOdor();
+            if(cur != 0)
+                average += cur;
         }
         return average / reviews.size();
     }
@@ -119,7 +127,9 @@ public class Restroom implements Parcelable {
     public double getAverageTraffic() {
         double average = 0;
         for(Review rev : reviews){
-            average += rev.getTraffic();
+            double cur = rev.getTraffic();
+            if(cur != 0)
+                average += cur;
         }
         return average / reviews.size();
     }
@@ -135,7 +145,9 @@ public class Restroom implements Parcelable {
     public ArrayList<String> getReviewComments() {
         ArrayList<String> comments = new ArrayList<>();
         for(Review rev : reviews){
-            comments.add(rev.getComment());
+            String cur = rev.getComment();
+            if(cur != "")
+                comments.add(rev.getComment());
         }
         return comments;
     }
