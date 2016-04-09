@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".ViewRestroomListActivity" />
         <activity android:name=".AddReviewActivity" />
-        <activity android:name=".AddRestroomActivity"></activity>
+        <activity android:name=".AddRestroomActivity" />
+        <activity android:name=".ViewRestroomActivity"></activity>
     </application>
 
 </manifest>

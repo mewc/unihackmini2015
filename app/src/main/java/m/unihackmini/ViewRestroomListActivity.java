@@ -1,10 +1,15 @@
 package m.unihackmini;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,6 +21,8 @@ public class ViewRestroomListActivity extends AppCompatActivity {
     private ListView restroomList;
     private RestroomAdaptor adaptor;
     private ArrayList<Restroom> restrooms;
+
+    String toast = "Not called";
 
     // for testing
     Restroom r1 = new Restroom("R1", "Here", 3, true);
@@ -42,11 +49,26 @@ public class ViewRestroomListActivity extends AppCompatActivity {
         restrooms.add(r2);
         restrooms.add(r3);
         restrooms.add(r4);
+
+        restroomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Restroom restroomClicked = (Restroom) parent.getItemAtPosition(position);
+
+                //Intent intent = new Intent(ViewRestroomListActivity.this, ViewRestroomActivity.class);
+                //intent.putExtra("name", restroomClicked.getName());
+                //startActivity(intent);
+
+                toast = restroomClicked.getName();
+            }
+        });
     }
 
     // called when a list item is pressed
     public void viewRestroom(View v){
+        String name = restrooms.get(restroomList.indexOfChild(v)).getName();
         Intent i = new Intent(this, ViewRestroomListActivity.class);
+        i.putExtra("name", name);
         startActivity(i);
     }
 }
