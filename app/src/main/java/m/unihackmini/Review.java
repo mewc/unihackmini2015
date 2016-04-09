@@ -1,9 +1,49 @@
 package m.unihackmini;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
+
 /**
  * Created by David on 9/04/16.
  */
 public class Review {
+
+    public static final String TABLE_NAME = "review";
+    public static final String COLUMN_ID = "review_id";
+    public static final String COLUMN_RESTROOM_ID = "restroom_id";
+    public static final String RATING = "rating";
+    public static final String CLEANLINESS = "cleanliness";
+    public static final String WIFI = "wifi";
+    public static final String DURATION = "duration";
+    public static final String COMMENT = "comment";
+    public static final String USERNAME = "username";
+    public static final String ODOR = "odor";
+
+    public static final String MODERNITY = "modernity";
+    public static final String TRAFFIC = "traffic";
+
+    public static final String TPABUNDANCE = "tp_abundance";
+    public static final String DRYER = "dryer";
+
+    public static final String CREATE_STATEMENT = "CREATE TABLE " + TABLE_NAME +
+            "(" +
+                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                    COLUMN_RESTROOM_ID + " INTEGER NOT NULL, " +
+                    RATING + " INTEGER NOT NULL, " +
+                    CLEANLINESS + " INTEGER, " +
+                    WIFI + " INTEGER, " +
+                    DURATION + " REAL, " +
+                    COMMENT + " TEXT, " +
+                    USERNAME + " TEXT NOT NULL, " +
+                    ODOR + " INTEGER, " +
+                    MODERNITY + " INTEGER, " +
+                    TRAFFIC + " INTEGER, " +
+                    TPABUNDANCE + " INTEGER, " +
+                    DRYER + " DRYER, " +
+                    ")";
+
+
+
     // quick review fields (8 items)
     private String restroomID;
     private int rating;             // star rating
@@ -32,6 +72,7 @@ public class Review {
         this.comment = comment;
         this.username = username;
         this.odor = odor;
+
     }
 
     // standard review constructor
