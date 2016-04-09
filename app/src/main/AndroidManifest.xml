@@ -8,12 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!-- Splash screen -->
         <activity
-            android:name="m.unihackmini.SplashScreen"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +24,13 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
         <activity android:name=".ViewRestroomListActivity" />
         <activity android:name=".AddReviewActivity" />
         <activity android:name=".AddRestroomActivity" />
         <activity android:name=".ViewRestroomActivity" />
+        <activity android:name=".ViewMapActivity"></activity>
     </application>
 
 </manifest>

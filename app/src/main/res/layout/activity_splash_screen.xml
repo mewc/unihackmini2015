@@ -45,7 +45,8 @@
             android:textColor="#94fbeb"
             android:textSize="50sp"
             android:textStyle="bold"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="bottom"
+            android:typeface="monospace" />
     </FrameLayout>
 
 </FrameLayout>

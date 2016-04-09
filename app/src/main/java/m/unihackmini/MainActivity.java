@@ -18,10 +18,16 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    // called when button is pressed
+    // called when BROWSE button is pressed
     public void viewRestroomList(View v){
         Intent i = new Intent(this, ViewRestroomListActivity.class);
         startActivity(i);
     }
-    
+
+    // called when MAP button is pressed
+    public void viewMap(View v){
+        Intent i = new Intent(this, ViewMapActivity.class);
+        startActivity(i);
+    }
+
 }

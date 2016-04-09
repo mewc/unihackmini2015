@@ -4,17 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="0dp"
-    tools:context="m.unihackmini.MainActivity">
+    tools:context="m.unihackmini.MainActivity"
+    android:background="#FFFFFF">
 
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/imageButton"
-        android:layout_alignParentBottom="true"
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BROWSE"
+        android:id="@+id/button"
         android:layout_centerHorizontal="true"
-        android:nestedScrollingEnabled="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/toilet"
-        android:onClick="viewRestroomList" />
+        android:background="#FFFFFF"
+        android:textColor="#FF0000"
+        android:textSize="72dp"
+        android:typeface="monospace"
+        android:onClick="viewRestroomList"
+        android:shadowColor="#FFFFFF"
+        android:singleLine="true"
+        android:elegantTextHeight="false"
+        android:elevation="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:id="@+id/button2"
+        android:background="#FFFFFF"
+        android:textColor="#0000FF"
+        android:textSize="72dp"
+        android:typeface="monospace"
+        android:shadowColor="#FFFFFF"
+        android:singleLine="true"
+        android:elegantTextHeight="false"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MAP"
+        android:id="@+id/button3"
+        android:background="#FFFFFF"
+        android:textColor="#00a600"
+        android:textSize="72dp"
+        android:typeface="monospace"
+        android:shadowColor="#FFFFFF"
+        android:singleLine="true"
+        android:elegantTextHeight="false"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:onClick="viewMap" />
 
 </RelativeLayout>
