@@ -22,13 +22,18 @@ public class ViewRestroomListActivity extends AppCompatActivity {
     private RestroomAdaptor adaptor;
     private ArrayList<Restroom> restrooms;
 
-    String toast = "Not called";
-
     // for testing
-    Restroom r1 = new Restroom("R1", "Here", 3, true);
-    Restroom r2 = new Restroom("R2", "There", 1, false);
-    Restroom r3 = new Restroom("R3", "Under", 2, true);
-    Restroom r4 = new Restroom("R4", "Over", 3, false);
+    Restroom r1 = new Restroom("R1", "Here", 3, true, "Fast");
+    Restroom r2 = new Restroom("R2", "There", 1, false, "Slow");
+    Restroom r3 = new Restroom("R3", "Under", 2, true, "Hot");
+    Restroom r4 = new Restroom("R4", "Over", 3, false, "Cold");
+
+    Review rev1 = new Review("First", 3, 5, 3, 6, 15, true, "It was pretty nice", "pooper2", 2, 1);
+    Review rev2 = new Review("Second", 5, 3, 6, 5, 30, true, "It was nice", "trooper2", 5, 4);
+    Review rev3 = new Review("Third", 6, 5, 6, 5, 2, false, "It was crap", "poop", 4, 2);
+    Review rev4 = new Review("Fourth", 3, 5, 3, 6, 15, false, "It sucked", "yayayayaya", 5, 10);
+    Review rev5 = new Review("Fifth", 10, 10, 10, 10, 60, true, "I just love pooping", "fecesphile", 10, 10);
+    Review rev6 = new Review("Sixth", 1, 1, 1, 1, 1, false, "I enjoy nothing in life", "girl", 1, 1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,25 +55,29 @@ public class ViewRestroomListActivity extends AppCompatActivity {
         restrooms.add(r3);
         restrooms.add(r4);
 
-        restroomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Restroom restroomClicked = (Restroom) parent.getItemAtPosition(position);
+        r1.addReview(rev1);
+        r1.addReview(rev3);
 
-                //Intent intent = new Intent(ViewRestroomListActivity.this, ViewRestroomActivity.class);
-                //intent.putExtra("name", restroomClicked.getName());
-                //startActivity(intent);
+        r2.addReview(rev2);
+        r2.addReview(rev6);
+        r2.addReview(rev3);
 
-                toast = restroomClicked.getName();
-            }
-        });
+        r3.addReview(rev5);
+
+        r4.addReview(rev1);
+        r4.addReview(rev1);
+        r4.addReview(rev2);
+        r4.addReview(rev3);
+        r4.addReview(rev4);
+        r4.addReview(rev5);
+        r4.addReview(rev6);
     }
 
     // called when a list item is pressed
     public void viewRestroom(View v){
-        String name = restrooms.get(restroomList.indexOfChild(v)).getName();
-        Intent i = new Intent(this, ViewRestroomListActivity.class);
-        i.putExtra("name", name);
+        Restroom restroom = restrooms.get(restroomList.indexOfChild(v));
+        Intent i = new Intent(this, ViewRestroomActivity.class);
+        i.putExtra("restroom", restroom);
         startActivity(i);
     }
 }

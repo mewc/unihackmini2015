@@ -26,6 +26,7 @@ public class RestroomAdaptor extends BaseAdapter{
         TextView restroomName;
         // ImageView restroomImage;
         TextView restroomRating;
+        TextView restroomLocation;
     }
 
     @Override
@@ -57,6 +58,7 @@ public class RestroomAdaptor extends BaseAdapter{
             vh = new ViewHolder();
             vh.restroomName = (TextView) view.findViewById(R.id.restroomName);
             vh.restroomRating = (TextView) view.findViewById(R.id.restroomRating);
+            vh.restroomLocation = (TextView) view.findViewById(R.id.restroomLocation);
             view.setTag(vh);
         } else {
             // View has already been created, fetch our ViewHolder
@@ -65,17 +67,19 @@ public class RestroomAdaptor extends BaseAdapter{
         // Assign values to the TextViews using the Restroom object
         String name = restrooms.get(i).getName();
         double aveRate = restrooms.get(i).getAverageRating();
+        String location = restrooms.get(i).getLocation();
 
-        vh.restroomName.setText((String) name);
+        vh.restroomName.setText(name);
         vh.restroomRating.setText(Double.toString(aveRate));
+        vh.restroomLocation.setText(location);
 
         // Change the colour depending on the monster type
-        if (aveRate >= 7)
-            vh.restroomRating.setTextColor(Color.parseColor("#00FF00")); // Green
-        if (aveRate >= 4)
-            vh.restroomRating.setTextColor(Color.parseColor("#0000FF")); // Blue
         if (aveRate >= 0)
             vh.restroomRating.setTextColor(Color.parseColor("#FF0000")); // Red
+        if (aveRate >= 4)
+            vh.restroomRating.setTextColor(Color.parseColor("#0000FF")); // Blue
+        if (aveRate >= 7)
+            vh.restroomRating.setTextColor(Color.parseColor("#00FF00")); // Green
 
         // Return the completed View of the row being processed
         return view;
