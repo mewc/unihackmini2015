@@ -34,6 +34,7 @@ public class Restroom {
         this.gender = gender;
         this.hasDisabled = hasDisabled;
         this.id = restroomId;
+        restroomId += 1;
     }
 
     public String getName() {
