@@ -5,7 +5,7 @@ package m.unihackmini;
  */
 public class Review {
     // quick review fields (8 items)
-    private String id;
+    private String restroomID;
     private int rating;             // star rating
     private int cleanliness;
     private Boolean hasWifi;
@@ -24,7 +24,7 @@ public class Review {
 
     // quick review constructor
     public Review(String id, int rating, int cleanliness, int duration, Boolean hasWifi, String comment, String username,int odor) {
-        this.id = id;
+        this.restroomID = id;
         this.rating = rating;
         this.cleanliness = cleanliness;
         this.duration = duration;
@@ -36,7 +36,7 @@ public class Review {
 
     // standard review constructor
     public Review(String id, int rating, int cleanliness, int modernity, int traffic, int duration, Boolean hasWifi, String comment, String username, int odor) {
-        this.id = id;
+        this.restroomID = id;
         this.rating = rating;
         this.cleanliness = cleanliness;
         this.modernity = modernity;
@@ -50,7 +50,7 @@ public class Review {
 
     // long review constructor
     public Review(String id, int rating, int cleanliness, int modernity, int traffic, int duration, Boolean hasWifi, String comment, String username, int tpAbundance, String dryer, int odor) {
-        this.id = id;
+        this.restroomID = id;
         this.rating = rating;
         this.cleanliness = cleanliness;
         this.modernity = modernity;
@@ -63,7 +63,7 @@ public class Review {
         this.dryer = dryer;
         this.odor = odor;
     }
-    
+
     public int getRating() {
         return rating;
     }
@@ -81,7 +81,7 @@ public class Review {
     }
 
     public String getId() {
-        return id;
+        return restroomID;
     }
 
     public int getModernity() {
