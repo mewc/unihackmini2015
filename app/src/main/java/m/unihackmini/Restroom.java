@@ -1,12 +1,14 @@
 package m.unihackmini;
 
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * Created by David on 9/04/16.
  */
-public class Restroom {
+public class Restroom{
     // restroom stats
     private ArrayList<Review> reviews;
     private int bathroomRating;
@@ -48,9 +50,9 @@ public class Restroom {
     }
 
     public void upateStats() {
-        for (int i=0; reviews.size(); i++) {
+        //for (int i=0; reviews.size(); i++) {
 
-        }
+        //}
     }
 }
 

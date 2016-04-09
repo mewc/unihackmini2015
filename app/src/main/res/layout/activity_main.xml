@@ -9,11 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="m.unihackmini.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="See Restrooms"
-        android:id="@+id/viewRestroom"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:nestedScrollingEnabled="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/toilet"
+        android:onClick="viewRestroomList" />
+
 </RelativeLayout>
