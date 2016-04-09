@@ -1,5 +1,8 @@
 package m.unihackmini;
 
+/**
+ * Modified 10/4/15
+ */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-                System.out.printl   n("The read failed: " + firebaseError.getMessage());
+                System.out.println("The read failed: " + firebaseError.getMessage());
             }
         });
     }
