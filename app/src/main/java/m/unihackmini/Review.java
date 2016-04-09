@@ -6,7 +6,7 @@ package m.unihackmini;
 public class Review {
     // quick review fields (8 items)
     private String restroomID;
-    private int rating;             // star rating
+    private int rating;             // 1-10 rating
     private int cleanliness;
     private Boolean hasWifi;
     private int duration;

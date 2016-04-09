@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewRestroomListActivity"></activity>
+        <activity android:name=".ViewRestroomListActivity" />
+        <activity android:name=".AddReviewActivity" />
+        <activity android:name=".AddRestroomActivity"></activity>
     </application>
 
 </manifest>

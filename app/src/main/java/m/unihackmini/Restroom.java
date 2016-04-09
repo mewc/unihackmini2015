@@ -15,10 +15,10 @@ public class Restroom {
     // restroom stats based off reviews
     private ArrayList<Review> reviews;
 
-    private int bathroomRating;
-    private int bathroomCleanliness;
-    private int bathroomModernity;
-    private int tpAbundance;
+    private double averageRating;
+    private double averageCleanliness;
+    private double averageModernity;
+    private double averageTP;
     private String dryer;
     private boolean wifi;
     private ArrayList<String> reviewComments;
@@ -47,7 +47,7 @@ public class Restroom {
         return gender;
     }
 
- 
+    public double getAverageRating() { return averageRating; }
 }
 
 
