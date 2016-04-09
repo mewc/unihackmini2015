@@ -1,17 +1,11 @@
 package m.unihackmini;
 
-import android.os.Parcelable;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * Created by David on 9/04/16.
  */
-<<<<<<< HEAD
-public class Restroom{
-    // restroom stats
-=======
 public class Restroom {
     // restroom details
     private String name;
@@ -19,9 +13,8 @@ public class Restroom {
     private int gender;
     private Boolean hasDisabled;
     // restroom stats based off reviews
->>>>>>> origin/master
     private ArrayList<Review> reviews;
-    
+
     private int bathroomRating;
     private int bathroomCleanliness;
     private int bathroomModernity;
@@ -46,22 +39,15 @@ public class Restroom {
         return location;
     }
 
-<<<<<<< HEAD
-    public void upateStats() {
-        //for (int i=0; reviews.size(); i++) {
-
-        //}
-=======
     public Boolean getHasDisabled() {
         return hasDisabled;
     }
 
     public int getGender() {
         return gender;
->>>>>>> origin/master
     }
 
-    // THIS IS A CHANGE
+ 
 }
 
 
