@@ -38,10 +38,7 @@ public class Restroom {
     public String getLocation() {
         return location;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     public Boolean getHasDisabled() {
         return hasDisabled;
     }
