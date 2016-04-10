@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class ViewRestroomActivity extends AppCompatActivity {
@@ -100,5 +101,12 @@ public class ViewRestroomActivity extends AppCompatActivity {
             label.setTextColor(Color.parseColor("#0000FF")); // Blue
         if (aveRate >= 7)
             label.setTextColor(Color.parseColor("#00a600")); // Green
+    }
+
+    public void addReview(View v){
+        Restroom restroom = currentRestroom;
+        Intent i = new Intent(this, AddReviewActivity.class);
+        i.putExtra("restroom", restroom);
+        startActivity(i);
     }
 }

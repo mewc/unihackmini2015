@@ -86,9 +86,9 @@ public class MainActivity extends Activity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                Map<String, Object> map = dataSnapshot.getValue(Map.class);
-                Set<String> s = map.keySet();
-                LinkedHashMap<String, Object> restroomLinkedHash = (LinkedHashMap<String, Object>) map.get(s.toArray()[0]);
+                //Map<String, Object> map = dataSnapshot.getValue(Map.class);
+                //Set<String> s = map.keySet();
+                //LinkedHashMap<String, Object> restroomLinkedHash = (LinkedHashMap<String, Object>) map.get(s.toArray()[0]);
             }
 
             @Override
