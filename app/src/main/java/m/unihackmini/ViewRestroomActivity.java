@@ -1,6 +1,7 @@
 package m.unihackmini;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -63,14 +64,41 @@ public class ViewRestroomActivity extends AppCompatActivity {
         }
         genderLabel.setText(genderString);
         disabledLabel.setText((currentRestroom.getHasDisabled() ? "Handicap accessible" : "Not handicap accessible"));
-        ratingLabel.setText(Double.toString(currentRestroom.getAverageRating()));
-        cleanlinessLabel.setText(Double.toString(currentRestroom.getAverageCleanliness()));
-        modernityLabel.setText(Double.toString(currentRestroom.getAverageModernity()));
-        tpLabel.setText(Double.toString(currentRestroom.getAverageTP()));
         dryerLabel.setText("Dryer: " + currentRestroom.getDryer());
         wifiLabel.setText((currentRestroom.isWifi() ? "WiFi accessible" : "No Wifi. Sorry bud."));
-        odorLabel.setText(Double.toString(currentRestroom.getAverageOdor()));
-        trafficLabel.setText(Double.toString(currentRestroom.getAverageTraffic()));
 
+        Double aveRate = currentRestroom.getAverageRating();
+        ratingLabel.setText("Overall: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(ratingLabel, aveRate);
+
+        aveRate = currentRestroom.getAverageCleanliness();
+        cleanlinessLabel.setText("Cleanliness: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(cleanlinessLabel, aveRate);
+
+        aveRate = currentRestroom.getAverageModernity();
+        modernityLabel.setText("Modernity: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(modernityLabel, aveRate);
+
+        aveRate = currentRestroom.getAverageTP();
+        tpLabel.setText("Toilet Paper Abundance: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(tpLabel, aveRate);
+
+        aveRate = currentRestroom.getAverageOdor();
+        odorLabel.setText("Odor Pleasantness: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(odorLabel, aveRate);
+
+        aveRate = currentRestroom.getAverageTraffic();
+        trafficLabel.setText("Traffic: " + Double.toString(Math.round(aveRate * 10) / 10.0));
+        setColor(trafficLabel, aveRate);
+    }
+
+    // sets color based on value
+    private void setColor(TextView label, double aveRate){
+        if (aveRate >= 0)
+            label.setTextColor(Color.parseColor("#FF0000")); // Red
+        if (aveRate >= 4)
+            label.setTextColor(Color.parseColor("#0000FF")); // Blue
+        if (aveRate >= 7)
+            label.setTextColor(Color.parseColor("#00a600")); // Green
     }
 }

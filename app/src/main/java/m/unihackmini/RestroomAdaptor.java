@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -70,7 +71,7 @@ public class RestroomAdaptor extends BaseAdapter{
         String location = restrooms.get(i).getLocation();
 
         vh.restroomName.setText(name);
-        vh.restroomRating.setText(Double.toString(aveRate));
+        vh.restroomRating.setText((Double.toString(Math.round(aveRate*10)/10.0)));
         vh.restroomLocation.setText(location);
 
         // Change the colour depending on the monster type
