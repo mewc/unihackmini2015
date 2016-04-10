@@ -50,6 +50,10 @@ public class ViewRestroomListActivity extends AppCompatActivity {
         // Associate adapter with ListView
         restroomList.setAdapter(adaptor);
 
+        // Add restrooms from Firebase
+
+
+        /* Local restroom tests */
         restrooms.add(r1);
         restrooms.add(r2);
         restrooms.add(r3);

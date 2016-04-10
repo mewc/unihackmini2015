@@ -10,7 +10,11 @@ import java.util.UUID;
  * Created by David on 9/04/16.
  */
 public class Restroom implements Parcelable {
+
+    public static int restroomId = 0;
+
     // restroom details
+    private int id;
     private String name;
     private String location;
     private int gender;
@@ -32,21 +36,23 @@ public class Restroom implements Parcelable {
     private int averageOdor;
     */
 
+    public Restroom(String name, String location, int gender, boolean hasDisabled, String dryer) {
+        this.id = restroomId;
+        restroomId++;
+
+        this.name = name;
+        this.location = location;
+        this.gender = gender;
+        this.hasDisabled = hasDisabled;
+        this.dryer = dryer;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
     public void addReview(Review review){
         reviews.add(review);
-    }
-
-    public Restroom(String name, String location, int gender, boolean hasDisabled, String dryer) {
-        this.name = name;
-        this.location = location;
-
-        this.gender = gender;
-        this.hasDisabled = hasDisabled;
-        this.dryer = dryer;
     }
 
     public String getName() {
@@ -65,6 +71,7 @@ public class Restroom implements Parcelable {
         return hasDisabled;
     }
 
+    public int getId() { return id; }
 
     public String getDryer() {
         return dryer;

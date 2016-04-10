@@ -32,5 +32,6 @@
         <activity android:name=".ViewRestroomActivity" />
         <activity android:name=".ViewMapActivity"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
