@@ -40,7 +40,7 @@ public class AddReviewActivity extends AppCompatActivity {
         boolean w = wifi.isChecked();
         currentRestroom.addReview(new Review("", r, c, m, tr, 0, w, "", "", tp, o));
 
-        Intent i = new Intent(this, ViewRestroomActivity.class);
+        Intent i = new Intent(this, ViewRestroomListActivity.class);
         i.putExtra("restroom", currentRestroom);
         startActivity(i);
     }

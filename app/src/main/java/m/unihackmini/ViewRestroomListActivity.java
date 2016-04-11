@@ -22,6 +22,8 @@ public class ViewRestroomListActivity extends AppCompatActivity {
     private RestroomAdaptor adaptor;
     private ArrayList<Restroom> restrooms;
 
+    Control c = new Control();
+
     // for testing
     Restroom r1 = new Restroom("R1", "Here", 3, true, "Fast");
     Restroom r2 = new Restroom("R2", "There", 1, false, "Slow");
@@ -34,6 +36,9 @@ public class ViewRestroomListActivity extends AppCompatActivity {
     Review rev4 = new Review("Fourth", 3, 5, 3, 6, 15, false, "It sucked", "yayayayaya", 5, 10);
     Review rev5 = new Review("Fifth", 10, 10, 10, 10, 60, true, "I just love pooping", "fecesphile", 10, 10);
     Review rev6 = new Review("Sixth", 1, 1, 1, 1, 1, false, "I enjoy nothing in life", "girl", 1, 1);
+
+    Restroom r;
+    Review rev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,13 @@ public class ViewRestroomListActivity extends AppCompatActivity {
         restrooms.add(r2);
         restrooms.add(r3);
         restrooms.add(r4);
+
+        if (getIntent().getExtras() != null) {
+            Intent i = getIntent();
+            r = i.getParcelableExtra("restroom");
+            restrooms.add(r);
+        }
+
 
         r1.addReview(rev1);
         r1.addReview(rev3);

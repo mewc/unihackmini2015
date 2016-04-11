@@ -17,6 +17,12 @@ import android.view.WindowManager;
 
 public class MainActivity extends Activity {
 
+    public static ArrayList<Restroom> restroomListGlobal = new ArrayList<>();
+
+    public ArrayList<Restroom> getR(){
+        return restroomListGlobal;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTitle("");
@@ -33,6 +39,12 @@ public class MainActivity extends Activity {
     // called when BROWSE button is pressed
     public void viewRestroomList(View v){
         Intent i = new Intent(this, ViewRestroomListActivity.class);
+        startActivity(i);
+    }
+
+    public void viewAddRestroom(View v){
+
+        Intent i = new Intent(this, AddRestroomActivity.class);
         startActivity(i);
     }
 
@@ -99,13 +111,37 @@ public class MainActivity extends Activity {
     }
 
     public void test() {
-        // create a Restroom that in turn creates 2 Reviews and stores it all on Firebase for testing
-        System.out.println("tim test");
-        Restroom restroom = new Restroom("IT Toilets", "Building 72", 3, true, "Paper Towel");
-        Firebase myFirebaseRef = new Firebase("https://unihackmini.firebaseio.com/");
-        //myFirebaseRef.child("restroom").setValue(null);
-        myFirebaseRef.child("restroom").child("restroom1").setValue(restroom);
+        Restroom r1 = createRestroom("R1", "Here", 3, true, "Fast");
+        Restroom r2 = createRestroom("R2", "There", 1, false, "Slow");
+        Restroom r3 = createRestroom("R3", "Under", 2, true, "Hot");
+        Restroom r4 = createRestroom("R4", "Over", 3, false, "Cold");
 
+        Review rev1 = createReview("First", 3, 5, 3, 6, 15, true, "It was pretty nice", "pooper2", 2, 1);
+        Review rev2 = createReview("Second", 5, 3, 6, 5, 30, true, "It was nice", "trooper2", 5, 4);
+        Review rev3 = createReview("Third", 6, 5, 6, 5, 2, false, "It was crap", "poop", 4, 2);
+        Review rev4 = createReview("Fourth", 3, 5, 3, 6, 15, false, "It sucked", "yayayayaya", 5, 10);
+        Review rev5 = createReview("Fifth", 10, 10, 10, 10, 60, true, "I just love pooping", "fecesphile", 10, 10);
+        Review rev6 = createReview("Sixth", 1, 1, 1, 1, 1, false, "I enjoy nothing in life", "girl", 1, 1);
+
+    }
+
+
+
+    public Restroom createRestroom(String name, String location, int gender, boolean hasDisabled, String dryer) {
+        Restroom myRestroom = new Restroom(name, location, gender, hasDisabled, dryer);
+        Firebase myFirebaseRef = new Firebase("https://unihackmini.firebaseio.com/");
+        String restroomEntry = "restroom" + myRestroom.getId();
+        myFirebaseRef.child("restroom").child(restroomEntry).setValue(myRestroom);
+        return myRestroom;
+    }
+
+
+    public Review createReview(String restroomID, int rating, int cleanliness, int modernity, int traffic, int duration, boolean hasWifi, String comment, String username, int tpAbundance, int odor) {
+        Firebase myFirebaseRef = new Firebase("https://unihackmini.firebaseio.com/");
+        Review myReview = new Review(restroomID, rating, cleanliness, modernity, traffic, duration, hasWifi, comment, username, tpAbundance, odor);
+        String reviewEntry = "review" + myReview.getReviewID();
+        myFirebaseRef.child("review").child(reviewEntry).setValue(myReview);
+        return myReview;
     }
 
 }

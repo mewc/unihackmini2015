@@ -7,7 +7,10 @@ import android.os.Parcelable;
  * Created by David on 9/04/16.
  */
 public class Review implements Parcelable{
+    public static int reviewID=0;
+
     // quick review fields (8 items)
+    private int id;
     private String restroomID;
     private int rating;             // 1-10 rating
     private int cleanliness;
@@ -57,6 +60,8 @@ public class Review implements Parcelable{
     public Review(String id, int rating, int cleanliness, int modernity, int traffic, int duration, boolean hasWifi, String comment, String username, int tpAbundance, int odor) {
         this.restroomID = id;
         this.rating = rating;
+        this.id = reviewID;
+        reviewID++;
         this.cleanliness = cleanliness;
         this.modernity = modernity;
         this.traffic = traffic;
@@ -174,6 +179,10 @@ public class Review implements Parcelable{
         parcel.writeInt(modernity);
         parcel.writeInt(traffic);
         parcel.writeInt(tpAbundance);
+    }
+
+    public int getReviewID(){
+        return this.id;
     }
 }
 

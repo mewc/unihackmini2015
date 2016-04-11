@@ -9,4 +9,114 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="m.unihackmini.AddRestroomActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/inputName"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/inputLocation"
+        android:layout_alignEnd="@+id/inputLocation"
+        android:layout_alignLeft="@+id/inputLocation"
+        android:layout_alignStart="@+id/inputLocation" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputLocation2"
+        android:layout_below="@+id/inputName"
+        android:layout_toRightOf="@+id/inputGender"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE"
+        android:id="@+id/createRestroomButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="createRestroom" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disables access"
+        android:id="@+id/inputDisabled"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:checked="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputDryer"
+        android:layout_below="@+id/dryerLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"
+        android:layout_alignRight="@+id/inputGender"
+        android:layout_alignEnd="@+id/inputGender" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Which hand dryers are available?"
+        android:id="@+id/dryerLabel"
+        android:layout_below="@+id/inputDisabled"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputGender"
+        android:layout_below="@+id/inputLocation"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name:"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Location:"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/inputLocation"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputName"
+        android:layout_below="@+id/inputName"
+        android:layout_alignRight="@+id/createRestroomButton"
+        android:layout_alignEnd="@+id/createRestroomButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputLocation"
+        android:layout_below="@+id/inputName"
+        android:layout_alignLeft="@+id/inputName"
+        android:layout_alignStart="@+id/inputName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

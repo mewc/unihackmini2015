@@ -69,9 +69,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Extra Info"
-            android:id="@+id/textView2"
+            android:id="@+id/textView9"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -129,9 +129,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Other Ratings"
-            android:id="@+id/textView3"
+            android:id="@+id/textView10"
             android:layout_gravity="center_horizontal" />
 
         <TextView

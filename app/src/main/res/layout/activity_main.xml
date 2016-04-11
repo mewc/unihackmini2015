@@ -5,53 +5,65 @@
     android:layout_height="match_parent"
     android:paddingBottom="0dp"
     tools:context="m.unihackmini.MainActivity"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:clickable="false">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BROWSE"
         android:id="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:background="#FFFFFF"
-        android:textColor="#FF0000"
+        android:background="#199600"
+        android:textColor="#FFF"
         android:textSize="72dp"
         android:typeface="monospace"
         android:onClick="viewRestroomList"
         android:shadowColor="#FFFFFF"
         android:singleLine="true"
         android:elegantTextHeight="false"
-        android:elevation="20dp" />
+        android:elevation="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD"
         android:id="@+id/button2"
-        android:background="#FFFFFF"
-        android:textColor="#0000FF"
+        android:background="#233de2"
+        android:textColor="#FFFFFF"
         android:textSize="72dp"
         android:typeface="monospace"
         android:shadowColor="#FFFFFF"
         android:singleLine="true"
         android:elegantTextHeight="false"
         android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:clickable="true"
+        android:onClick="viewAddRestroom"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MAP"
         android:id="@+id/button3"
-        android:background="#FFFFFF"
-        android:textColor="#00a600"
+        android:background="#d71c1c"
+        android:textColor="#FFFFFF"
         android:textSize="72dp"
         android:typeface="monospace"
         android:shadowColor="#FFFFFF"
         android:singleLine="true"
         android:elegantTextHeight="false"
         android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:onClick="viewMap" />
+        android:onClick="viewMap"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
