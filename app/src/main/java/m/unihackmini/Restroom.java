@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by David on 9/04/16.
+ * Modified 10/4/16
  */
 public class Restroom {
 
@@ -42,7 +43,6 @@ public class Restroom {
         Review bReview = new Review("3",2,3,3,false,"comment2", "josh", 2);
         this.reviews.add(aReview);
         this.reviews.add(bReview);
-
 
     }
 
